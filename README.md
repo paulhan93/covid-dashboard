@@ -16,7 +16,7 @@ We will use the following Covid APIs to gather pertinent information useful for 
 # our stack
   - HTML & CSS
   - Javascript
-  - Bootstraip
+  - Bootstrap
   - React.js 
 
 # how to clone this repository to local
