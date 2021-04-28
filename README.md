@@ -18,5 +18,5 @@ We will use the following Covid APIs to gather pertinent information useful for 
   - React.js 
 
 # how to clone this repository to local
-1. using the terminal, go to a directory you wish to store this repository.
-2. copy & paste ```git clone https://github.com/paulhan93/covid-dashboard.git``` into terminal.
+1. using the terminal, navigate to a local directory you wish to clone the repo.
+2. copy & paste ```git clone https://github.com/paulhan93/covid-dashboard.git``` into the terminal.
