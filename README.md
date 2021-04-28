@@ -6,7 +6,7 @@ build a Covid-19 dashboard which provides at-a-glance views of key data related 
 
 # APIs
 We will use the following Covid APIs to gather pertinent information useful for our dashboard.
-  - 
+
   - 
 
 # our stack
