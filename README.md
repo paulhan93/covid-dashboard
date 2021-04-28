@@ -7,7 +7,9 @@ build a Covid-19 dashboard which provides at-a-glance views of key data related 
 # APIs
 We will use the following Covid APIs to gather pertinent information useful for our dashboard.
 
-  - 
+  - API #1 
+  - API #2
+  - API #3
 
 # our stack
   - HTML & CSS
@@ -15,3 +17,4 @@ We will use the following Covid APIs to gather pertinent information useful for 
   - Bootstraip
   - React.js 
 
+# how to clone this repository to local
