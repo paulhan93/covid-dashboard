@@ -7,9 +7,11 @@ build a Covid-19 dashboard which provides at-a-glance views of key data related 
 # APIs
 We will use the following Covid APIs to gather pertinent information useful for our dashboard.
 
-  - API #1 
-  - API #2
-  - API #3
+  - https://covid19api.com/
+  - https://covidtracking.com/data/api
+  - https://github.com/BlankerL/DXY-COVID-19-Crawler 
+  - https://github.com/community-insight-impact/covid_community_vulnerability
+  - https://github.com/public-apis/public-apis#health
 
 # our stack
   - HTML & CSS
@@ -20,4 +22,4 @@ We will use the following Covid APIs to gather pertinent information useful for 
 # how to clone this repository to local
 1. using the terminal, navigate to a local directory you wish to clone the repo.
 2. ```git clone https://github.com/paulhan93/covid-dashboard.git``` (copy & paste into terminal).
-3. 
+
