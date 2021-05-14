@@ -19,17 +19,20 @@
     <!-- change/edit navbar img -->
     <!-- resize font -->
     <!-- convert to dropdown when sm screen -->
+    <!-- add sidebar of page location? -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-5 py-3 text-uppercase">
         <a class="navbar-brand px-3" href="#">
             <img src="images/navbar_image.webp" alt="" width="30" height="24" class="d-inline-block align-text-top">
             covid dashboard
         </a>
-        <!-- use botton below to make toggle for sm screen -->
+
+        <!-- add button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
+        <!-- fix sm screen toggle; 1st collapse making it collapsed -->
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item px-3 active"><a class="nav-link" href="#">home</a></li>
@@ -40,7 +43,7 @@
     </nav>
 
     <!-- container (symptoms of COVID-19) -->
-    <div class="container my-5">
+    <div class="container my-5 bg-danger">
         <h1>Symptoms of COVID-19</h1>
         <p>People with COVID-19 have had a wide range of symptoms reported – ranging from mild symptoms to severe
             illness. Symptoms may appear 2-14 days after exposure to the virus. Anyone can have mild to severe symptoms.
@@ -65,7 +68,7 @@
     </div>
 
     <!-- container (When to Seek Emergency Medical Attention) -->
-    <div class="container my-5">
+    <div class="container my-5 bg-warning">
         <h1>When to Seek Emergency Medical Attention</h1>
         <p>Look for emergency warning signs for COVID-19. If someone is showing any of these signs, <strong>seek
                 emergency medical care immediately:</strong></p>
@@ -83,7 +86,7 @@
     </div>
 
     <!-- container 3 (Difference between COVID-19 & Flu) -->
-    <div class="container my-5">
+    <div class="container my-5 bg-info">
         <h1>Difference between COVID-19 & Flu</h1>
         <p>Influenza (Flu) and COVID-19 are both contagious respiratory illnesses, but they are caused by different
             viruses. COVID-19 is caused by infection with a new coronavirus (called SARS-CoV-2), and flu is caused by
