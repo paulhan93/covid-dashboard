@@ -24,11 +24,13 @@
             <img src="images/navbar_image.webp" alt="" width="30" height="24" class="d-inline-block align-text-top">
             covid dashboard
         </a>
-        <!-- use botton below to make toggle for sm screen
-        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"></button>
-        -->
+        <!-- use botton below to make toggle for sm screen -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <div class="navbar-collapse">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item px-3 active"><a class="nav-link" href="#">home</a></li>
                 <li class="nav-item px-3"><a class="nav-link" href="#">maps</a></li>
@@ -97,6 +99,9 @@
 
     <!-- Add Footer (list sources) -->
     <!-- sourse : www.cdc.com -->
+    <footer class="footer" role="sourceinfo" aria-label="Footer">
+        <div class="container"></div>
+    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
