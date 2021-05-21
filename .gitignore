@@ -22,7 +22,3 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 node_modules
-<<<<<<< HEAD:covid-app/.gitignore
-node_modules
-=======
->>>>>>> 5bb9871dcccf87464fc2a066f2aabffe49bdf698:.gitignore
