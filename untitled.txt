@@ -1,0 +1,136 @@
+Javascript Libraries
+
+- jQuery makes it easy to manipulate DOM
+    - $('#objectId').on('click', function() {
+        // do stuff here
+    })
+
+- react (library not a framework)
+    - requires outside library for making Ajax calls, routing, state management, etc.
+
+
+
+
+- use CORS to allow two domains to make requests
+
+
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS & stylesheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="dashboard.css">
+
+    <title>Covid Dashboard</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <!-- change/edit navbar img -->
+    <!-- resize font -->
+    <!-- convert to dropdown when sm screen -->
+    <!-- add sidebar of page location? -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-5 py-3 text-uppercase">
+        <a class="navbar-brand px-3" href="#">
+            covid dashboard
+        </a>
+
+        <!-- add button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- fix sm screen toggle; 1st collapse making it collapsed -->
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item px-3 active"><a class="nav-link" href="#">home</a></li>
+                <li class="nav-item px-3"><a class="nav-link" href="#">maps</a></li>
+                <li class="nav-item px-3"><a class="nav-link" href="#">charts</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- container (symptoms of COVID-19) -->
+    <div class="container my-5 bg-danger">
+        <h1>Symptoms of COVID-19</h1>
+        <p>People with COVID-19 have had a wide range of symptoms reported – ranging from mild symptoms to severe
+            illness. Symptoms may appear 2-14 days after exposure to the virus. Anyone can have mild to severe symptoms.
+            People with these symptoms may have COVID-19:</p>
+        <ul>
+            <li>Fever or chills</li>
+            <li>Cough</li>
+            <li>Shortness of breath or difficulty breathing</li>
+            <li>Fatigue</li>
+            <li>Muscle or body aches</li>
+            <li>Headache</li>
+            <li>New loss of taste or smell</li>
+            <li>Sore throat</li>
+            <li>Congestion or runny nose</li>
+            <li>Nausea or vomiting</li>
+            <li>Diarrhea</li>
+        </ul>
+        <p>This list does not include all possible symptoms. CDC will continue to update this list as we learn more
+            about COVID-19. Older adults and people who have severe underlying medical conditions like heart or lung
+            disease or diabetes seem to be at higher risk for developing more serious complications from COVID-19
+            illness.</p>
+    </div>
+
+    <!-- container (When to Seek Emergency Medical Attention) -->
+    <div class="container my-5 bg-warning">
+        <h1>When to Seek Emergency Medical Attention</h1>
+        <p>Look for emergency warning signs for COVID-19. If someone is showing any of these signs, <strong>seek
+                emergency medical care immediately:</strong></p>
+        <ul>
+            <li>Trouble breathing</li>
+            <li>Persistent pain or pressure in the test</li>
+            <li>New confusion</li>
+            <li>Inability to wake or stay awake</li>
+            <li>Pale, grey, or blue-colored skin, lips, or nail beds, depending on skin tone</li>
+        </ul>
+        <p>This list is not all possible symptoms. Please call your medical provider for any other symptoms that are
+            severe or concerning to you.</p>
+        <p>Call 911 or call ahead to your local emergency facility: Notify the operator that you are seeking care for
+            someone who has or may have COVID-19.</p>
+    </div>
+
+    <!-- container 3 (Difference between COVID-19 & Flu) -->
+    <div class="container my-5 bg-info">
+        <h1>Difference between COVID-19 & Flu</h1>
+        <p>Influenza (Flu) and COVID-19 are both contagious respiratory illnesses, but they are caused by different
+            viruses. COVID-19 is caused by infection with a new coronavirus (called SARS-CoV-2), and flu is caused by
+            infection with influenza viruses.</p>
+        <p>COVID-19 seems to spread more easily than flu and causes more serious illnesses in some people. It can also
+            take longer before people show symptoms and people can be contagious for longer. More information about
+            differences between flu and COVID-19 is available in the different sections below.</p>
+        <p>Because some of the symptoms of flu and COVID-19 are similar, it may be hard to tell the difference between
+            them based on symptoms alone, and testing may be needed to help confirm a diagnosis.</p>
+        <p>While more is learned every day about COVID-19 and the virus that causes it, there is still a lot that is
+            unknown . This page compares COVID-19 and flu, given the best available information to date.</p>
+    </div>
+
+    <!-- Add Footer (list sources) -->
+    <!-- sourse : www.cdc.com -->
+    <footer class="footer" role="sourceinfo" aria-label="Footer">
+        <div class="container"></div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
