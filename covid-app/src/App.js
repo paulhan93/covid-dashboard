@@ -6,7 +6,8 @@ import './App.css';
 function App() {
   return (
     <div className='App'>
-      <h1>Exercise 03</h1>
+      <h1>Covid-19 Dashboard</h1>
+
     </div>
   );
 }
