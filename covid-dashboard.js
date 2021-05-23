@@ -13,9 +13,27 @@ async function getAllData() {
   return jsonData;
 }
 
+// check to see promise is fulfilled
+console.log(getAllData());
+
+
+
 // manipulate above data to display in line graph
 function createLineGraph() {
-  
+  const DATA_COUNT = 17;
+  const NUMBER_CFG = { count: DATA_COUNT, min: 0, max: 20000 };
+
+  const labels = Utils.months({count: DATA_COUNT})
+  const data = {
+      labels: labels,
+      datasets: [
+          {
+              label: 'New Cases',
+              data: Utils.numbers(NUMBER_CFG),
+              borderColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
+          }
+      ]
+  }
 
   const linegraph = {
     type: "line",
