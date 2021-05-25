@@ -8,10 +8,12 @@ async function getData(url) {
   if (rawData == undefined) {
     console.log("Error.");
   }
-  return await rawData.json();
+  return await rawData.value.cases;
 }
 
 console.log(getData(url1));
+//let data = getData(url1);
+//console.log(data.value.cases);
 
 function organizeNewcases() {
     let day = [];
@@ -19,6 +21,9 @@ function organizeNewcases() {
         //let date = 
     })
 }
+
+
+
 
 
 // charts & graphs
