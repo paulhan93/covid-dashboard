@@ -21,7 +21,6 @@ function graphCases(data) {
   // contain date and number of cases
   let date = [];
   let cases = [];
-  console.log(data.cases);
 
   // push date and number of cases
   for (let i in Object(data.cases)) {
@@ -29,16 +28,15 @@ function graphCases(data) {
     cases.push(data.cases[i]);
   }
 
+  console.log(data.cases);
   console.log(date);
   console.log(cases);
-
 
   let labels2 = date;
   let data2 = cases;
   let colors2 = ["#49A9EA"];
-  //let colors2 = ["#49A9EA", "#36CAAB", "#34495E", "#B370CF"];
 
-  let myChart2 = document.getElementById("myChart2").getContext("2d");
+  let myChart2 = document.getElementById("casesLineGraph").getContext("2d");
   let chart2 = new Chart(myChart2, {
     type: "line",
     data: {
@@ -51,8 +49,12 @@ function graphCases(data) {
       ],
     },
     options: {
+      legend: {
+        position: "bottom",
+        display: false,
+      },
       title: {
-        text: "Do you like doughnuts?",
+        text: "New Cases",
         display: true,
       },
     },
@@ -69,6 +71,8 @@ function graphRecovery(data) {
 }
 */
 
+
+/*
 // charts & graphs
 let labels1 = ["Yes", "yes but in green"];
 let data1 = [69, 31];
@@ -92,55 +96,5 @@ let chart1 = new Chart(myChart1, {
       display: true,
     },
   },
-});
-
-/*
-
-window.unload = createLineGraph();
-
-// manipulate above data to display in line graph
-function createLineGraph() {
-  const DATA_COUNT = 7;
-  const NUMBER_CFG = { count: DATA_COUNT, min: 0, max: 20000 };
-
-  const labels = Utils.months({ count: DATA_COUNT });
-  const data = {
-    labels: labels,
-    datasets: [
-      {
-        label: "New Cases",
-        data: [65, 59, 80, 81, 56, 55, 40],
-        fill: false,
-        borderColor: "rgb(75, 192, 192)",
-        tension: 0.1,
-      },
-    ],
-  };
-
-  const linegraph = {
-    type: "line",
-    data: data,
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          position: "top",
-        },
-        title: {
-          display: true,
-          text: "Chart.js Line Chart",
-        },
-      },
-    },
-  };
-}
-*/
-
-/*
-//let container = $('#information').
-$(function () {
-
-  $("#information").text('hello');
-
 });
 */
