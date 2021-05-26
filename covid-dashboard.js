@@ -13,28 +13,26 @@ async function getData(url) {
   let response = await rawData.json();
 
   graphCases(response);
-  graphDeaths(response);
-  graphRecovery(response);
-  return response;
+  //graphDeaths(response);
+  //graphRecovery(response);
 }
-
 
 function graphCases(data) {
 
   // contain date and number of cases
-  let casesData = [];
-
+  var casesData = [];
   console.log(data.cases);
 
-  // push number of cases into array
-  data.cases.array.forEach(element => {
-      casesData.push(element);
-  });
+  // push date and number of cases
+  for (var i in Object(data.cases)) {
+    var cases = [i, data.cases[i]];
+    casesData.push(cases);
+  }
 
   console.log(casesData);
-
 }
 
+/*
 function graphDeaths(data) {
   console.log(data.deaths);
 }
@@ -42,7 +40,7 @@ function graphDeaths(data) {
 function graphRecovery(data) {
   console.log(data.recovered);
 }
-
+*/
 
 
 // charts & graphs
