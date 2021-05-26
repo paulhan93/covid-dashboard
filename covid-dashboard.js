@@ -1,6 +1,7 @@
 // API urls
-const url1 = "https://disease.sh/v3/covid-19/historical/all?lastdays=all";    // new cases
+const url1 = "https://disease.sh/v3/covid-19/historical/all?lastdays=all"; // new cases
 
+getData(url1);
 
 // fetch url & convert to json data format
 async function getData(url) {
@@ -8,21 +9,35 @@ async function getData(url) {
   if (rawData == undefined) {
     console.log("Error.");
   }
-  return await rawData.value.cases;
-}
 
-console.log(getData(url1));
-//let data = getData(url1);
-//console.log(data.value.cases);
+  let response = await rawData.json();
 
-function organizeNewcases() {
-    let day = [];
-    getData(url1).forEach((element) => {
-        //let date = 
-    })
+  graphCases(response);
+  graphDeaths(response);
+  graphRecovery(response);
+  return response;
 }
 
 
+function graphCases(data) {
+
+  let cases = data.cases;
+  let casesData = [];
+
+  console.log(cases);
+
+  cases.forEach((element) => { casesData.push(element); });
+
+
+}
+
+function graphDeaths(data) {
+  console.log(data.deaths);
+}
+
+function graphRecovery(data) {
+  console.log(data.recovered);
+}
 
 
 
@@ -135,7 +150,6 @@ function createLineGraph() {
   };
 }
 */
-
 
 /*
 //let container = $('#information').
