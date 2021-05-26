@@ -18,18 +18,45 @@ async function getData(url) {
 }
 
 function graphCases(data) {
-
   // contain date and number of cases
-  var casesData = [];
+  let date = [];
+  let cases = [];
   console.log(data.cases);
 
   // push date and number of cases
-  for (var i in Object(data.cases)) {
-    var cases = [i, data.cases[i]];
-    casesData.push(cases);
+  for (let i in Object(data.cases)) {
+    date.push(i);
+    cases.push(data.cases[i]);
   }
 
-  console.log(casesData);
+  console.log(date);
+  console.log(cases);
+
+
+  let labels2 = date;
+  let data2 = cases;
+  let colors2 = ["#49A9EA"];
+  //let colors2 = ["#49A9EA", "#36CAAB", "#34495E", "#B370CF"];
+
+  let myChart2 = document.getElementById("myChart2").getContext("2d");
+  let chart2 = new Chart(myChart2, {
+    type: "line",
+    data: {
+      labels: labels2,
+      datasets: [
+        {
+          data: data2,
+          backgroundColor: colors2,
+        },
+      ],
+    },
+    options: {
+      title: {
+        text: "Do you like doughnuts?",
+        display: true,
+      },
+    },
+  });
 }
 
 /*
@@ -41,7 +68,6 @@ function graphRecovery(data) {
   console.log(data.recovered);
 }
 */
-
 
 // charts & graphs
 let labels1 = ["Yes", "yes but in green"];
@@ -57,35 +83,6 @@ let chart1 = new Chart(myChart1, {
       {
         data: data1,
         backgroundColor: colors1,
-      },
-    ],
-  },
-  options: {
-    title: {
-      text: "Do you like doughnuts?",
-      display: true,
-    },
-  },
-});
-
-let labels2 = [
-  "American Airlines Group",
-  "Ryanair",
-  "China Southern Airlines",
-  "Lufthansa Group",
-];
-let data2 = [199.6, 130.3, 126.3, 130];
-let colors2 = ["#49A9EA", "#36CAAB", "#34495E", "#B370CF"];
-
-let myChart2 = document.getElementById("myChart2").getContext("2d");
-let chart2 = new Chart(myChart2, {
-  type: "line",
-  data: {
-    labels: labels2,
-    datasets: [
-      {
-        data: data2,
-        backgroundColor: colors2,
       },
     ],
   },
