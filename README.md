@@ -18,8 +18,3 @@ We will use the following Covid APIs to gather pertinent information useful for 
   <li>https://github.com/community-insight-impact/covid_community_vulnerability</li>
   <li>https://github.com/public-apis/public-apis#health</li>
 </ul>
-
-# how to clone this repository to local
-1. using the terminal, navigate to a local directory you wish to clone the repo.
-2. ```git clone https://github.com/paulhan93/covid-dashboard.git``` (copy & paste into terminal).
-
