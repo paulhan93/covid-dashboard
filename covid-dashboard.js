@@ -21,13 +21,17 @@ async function getData(url) {
 
 function graphCases(data) {
 
-  let cases = data.cases;
+  // contain date and number of cases
   let casesData = [];
 
-  console.log(cases);
+  console.log(data.cases);
 
-  cases.forEach((element) => { casesData.push(element); });
+  // push number of cases into array
+  data.cases.array.forEach(element => {
+      casesData.push(element);
+  });
 
+  console.log(casesData);
 
 }
 
@@ -96,20 +100,6 @@ let chart2 = new Chart(myChart2, {
 });
 
 /*
-// maybe make into more general converting function (raw -> json)
-// get data of total new cases, recovered, and deaths. (Bar/Line graph)
-async function getAllData() {
-  const rawData = await fetch(url);
-  if (rawData == undefined) {
-    console.log("Error.");
-  }
-  const jsonData = await rawData.json();
-
-  return jsonData;
-}
-
-// check to see promise is fulfilled
-console.log(getAllData());
 
 window.unload = createLineGraph();
 
