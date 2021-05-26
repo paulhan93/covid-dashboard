@@ -10,3 +10,7 @@ This repo will be used to build a Covid-19 Dashboard. The dashboard will highlig
   <li>Chart.js</li>
 </ul>
 
+<strong>APIs</strong>
+<ul>
+  <li>https://disease.sh/v3/covid-19/historical/all?lastdays=all</li>
+</ul>
