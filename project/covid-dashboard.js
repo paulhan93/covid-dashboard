@@ -29,33 +29,34 @@ function graphCases(data) {
     cases.push(data.cases[i]);
   }
 
+  // output to console
   console.log(data.cases);
   console.log(date);
   console.log(cases);
 
-  let labels = date;
-  let num = cases;
-  let colors = ["#49A9EA"];
+  console.log(cases[0].toLocaleString());
 
+
+  // grab DOM element and create chart
   let myChart = document.getElementById("casesLineGraph").getContext("2d");
   let chart = new Chart(myChart, {
     type: "line",
     data: {
-      labels: labels,
+      labels: date,
       datasets: [
         {
-          data: num,
-          backgroundColor: colors,
+          data: cases,
+          backgroundColor: ["#49A9EA"],
         },
       ],
     },
     options: {
       legend: {
-        position: "bottom",
         display: false,
+        //position: "bottom",
       },
       title: {
-        text: "Cases",
+        text: "Total Cases",
         display: true,
       },
     },
@@ -74,30 +75,28 @@ function graphDeaths(data) {
     cases.push(data.deaths[i]);
   }
 
+  // output to console
   console.log(data.deaths);
   console.log(date);
   console.log(cases);
 
-  let labels = date;
-  let num = cases;
-  let colors = ["#AB271E"];
-
+  // grab DOM element and create chart
   let myChart = document.getElementById("deathsLineGraph").getContext("2d");
   let chart = new Chart(myChart, {
     type: "line",
     data: {
-      labels: labels,
+      labels: date,
       datasets: [
         {
-          data: num,
-          backgroundColor: colors,
+          data: cases,
+          backgroundColor: ["#AB271E"],
         },
       ],
     },
     options: {
       legend: {
-        position: "bottom",
         display: false,
+        //position: "bottom",
       },
       title: {
         text: "Deaths",
@@ -119,23 +118,21 @@ function graphRecovery(data) {
     cases.push(data.recovered[i]);
   }
 
+  // output to console
   console.log(data.recovered);
   console.log(date);
   console.log(cases);
 
-  let labels = date;
-  let num = cases;
-  let colors = ["#29BF00"];
-
+  // grab DOM element and create chart
   let myChart = document.getElementById("recoveredLineGraph").getContext("2d");
   let chart = new Chart(myChart, {
     type: "line",
     data: {
-      labels: labels,
+      labels: date,
       datasets: [
         {
-          data: num,
-          backgroundColor: colors,
+          data: cases,
+          backgroundColor: ["#29BF00"],
         },
       ],
     },

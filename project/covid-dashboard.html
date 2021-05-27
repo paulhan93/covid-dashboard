@@ -9,32 +9,44 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="covid-dashboard.js"></script>
 </head>
 
 <body class="bg-info">
 
+
+    <!--
     <div class="p-5 text-center bg-dark text-white text-uppercase">
         <h1 class="mb-3">covid-19 dashboard</h1>
     </div>
+    -->
+
+    <div class="jumbotron jumbotron-fluid bg-dark text-light text-uppercase">
+        <div class="container my-5">
+            <h1 class="">covid-19 dashboard</h1>
+        </div>
+    </div>
+
 
     <main class="container border rounded bg-light w-75 my-5">
 
-        <div class="container my-5">
+        <div class="container">
             <div class="container my-5">
-                <h1 class="">LINE / BAR GRAPH</h1>
+                <h1 class="">Global Cases</h1>
                 <canvas id="casesLineGraph"></canvas>
-                <canvas id="deathsLineGraph"></canvas> 
+                <canvas id="deathsLineGraph"></canvas>
                 <canvas id="recoveredLineGraph"></canvas>
             </div>
         </div>
 
-        <div class="container my-5">
+        <div class="container">
             <div class="container my-5">
                 <h1>Symptoms of COVID-19</h1>
                 <p>People with COVID-19 have had a wide range of symptoms reported – ranging from mild symptoms to
                     severe
-                    illness. Symptoms may appear 2-14 days after exposure to the virus. Anyone can have mild to severe
+                    illness. Symptoms may appear 2-14 days after exposure to the virus. Anyone can have mild to
+                    severe
                     symptoms.
                     People with these symptoms may have COVID-19:</p>
                 <ul>
@@ -50,9 +62,11 @@
                     <li>Nausea or vomiting</li>
                     <li>Diarrhea</li>
                 </ul>
-                <p>This list does not include all possible symptoms. CDC will continue to update this list as we learn
+                <p>This list does not include all possible symptoms. CDC will continue to update this list as we
+                    learn
                     more
-                    about COVID-19. Older adults and people who have severe underlying medical conditions like heart or
+                    about COVID-19. Older adults and people who have severe underlying medical conditions like heart
+                    or
                     lung
                     disease or diabetes seem to be at higher risk for developing more serious complications from
                     COVID-19
@@ -61,8 +75,10 @@
 
             <div class="container my-5">
                 <h1>When to Seek Emergency Medical Attention</h1>
-                <p>Look for emergency warning signs for COVID-19. If someone is showing any of these signs, <strong>seek
-                        emergency medical care immediately:</strong></p>
+                <p>Look for emergency warning signs for COVID-19. If someone is showing any of these signs,
+                    <strong>seek
+                        emergency medical care immediately:</strong>
+                </p>
                 <ul>
                     <li>Trouble breathing</li>
                     <li>Persistent pain or pressure in the test</li>
@@ -70,7 +86,8 @@
                     <li>Inability to wake or stay awake</li>
                     <li>Pale, grey, or blue-colored skin, lips, or nail beds, depending on skin tone</li>
                 </ul>
-                <p>This list is not all possible symptoms. Please call your medical provider for any other symptoms that
+                <p>This list is not all possible symptoms. Please call your medical provider for any other symptoms
+                    that
                     are
                     severe or concerning to you.</p>
                 <p>Call 911 or call ahead to your local emergency facility: Notify the operator that you are seeking
@@ -87,13 +104,16 @@
                     caused
                     by
                     infection with influenza viruses.</p>
-                <p>COVID-19 seems to spread more easily than flu and causes more serious illnesses in some people. It
+                <p>COVID-19 seems to spread more easily than flu and causes more serious illnesses in some people.
+                    It
                     can
                     also
-                    take longer before people show symptoms and people can be contagious for longer. More information
+                    take longer before people show symptoms and people can be contagious for longer. More
+                    information
                     about
                     differences between flu and COVID-19 is available in the different sections below.</p>
-                <p>Because some of the symptoms of flu and COVID-19 are similar, it may be hard to tell the difference
+                <p>Because some of the symptoms of flu and COVID-19 are similar, it may be hard to tell the
+                    difference
                     between
                     them based on symptoms alone, and testing may be needed to help confirm a diagnosis.</p>
                 <p>While more is learned every day about COVID-19 and the virus that causes it, there is still a lot
@@ -105,7 +125,6 @@
         <div id="information" class="container"></div>
 
     </main>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 
 </html>
