@@ -12,12 +12,137 @@ async function getData(url) {
 
   let response = await rawData.json();
 
-  graphCases(response);
-  graphDeaths(response);
-  graphRecovery(response);
+  //graphCases(response);
+  //graphDeaths(response);
+  //graphRecovered(response);
+  graph(response);
 }
 
+function graph(data) {
+  // contain date and number of cases
+  let date = [];
+  let cases = [];
+  let deaths = [];
+  let recovered = [];
 
+  // push date and number of cases
+  for (let i in Object(data.cases)) {
+    date.push(i);
+    cases.push(data.cases[i]);
+    deaths.push(data.deaths[i]);
+    recovered.push(data.recovered[i]);
+  }
+
+  // output to console
+  console.log(date);
+  console.log(cases);
+  console.log(deaths);
+  console.log(recovered);
+
+  //console.log(cases[0].toLocaleString());
+
+  // grab DOM element and create chart
+  let caseGraph = document.getElementById("casesLineGraph").getContext("2d");
+  new Chart(caseGraph, {
+    type: "line",
+    data: {
+      labels: date,
+      datasets: [
+        {
+          //label: "Total Cases",
+          data: cases,
+          backgroundColor: ["#49A9EA"],
+          fill: true,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: false,
+          //position: "bottom",
+        },
+        title: {
+          text: "Total Cases",
+          display: true,
+        },
+      },
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: "date",
+          },
+        },
+        y: {
+          title: {
+            display: true,
+            text: "count",
+          },
+        },
+      },
+    },
+  });
+
+  let deathGraph = document.getElementById("deathsLineGraph").getContext("2d");
+  new Chart(deathGraph, {
+    type: "line",
+    data: {
+      labels: date,
+      datasets: [
+        {
+          data: deaths,
+          backgroundColor: ["#AB271E"],
+          fill: true,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: false,
+        },
+        title: {
+          text: "Total Deaths",
+          display: true,
+        },
+      },
+    },
+  });
+
+  let recoveredGraph = document
+    .getElementById("recoveredLineGraph")
+    .getContext("2d");
+  new Chart(recoveredGraph, {
+    type: "line",
+    data: {
+      labels: date,
+      datasets: [
+        {
+          data: recovered,
+          backgroundColor: ["#29BF00"],
+          fill: true,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: false,
+        },
+        title: {
+          text: "Total Recovered",
+          display: true,
+        },
+      },
+    },
+  });
+}
+
+/*
 function graphCases(data) {
   // contain date and number of cases
   let date = [];
@@ -63,7 +188,6 @@ function graphCases(data) {
   });
 }
 
-
 function graphDeaths(data) {
   // contain date and number of cases
   let date = [];
@@ -106,8 +230,7 @@ function graphDeaths(data) {
   });
 }
 
-
-function graphRecovery(data) {
+function graphRecovered(data) {
   // contain date and number of cases
   let date = [];
   let cases = [];
@@ -148,7 +271,7 @@ function graphRecovery(data) {
     },
   });
 }
-
+*/
 
 /*
 // charts & graphs
