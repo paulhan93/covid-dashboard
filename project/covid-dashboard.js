@@ -33,13 +33,26 @@ function graph(data) {
     recovered.push(data.recovered[i]);
   }
 
+  /*
+  // easy-to-read format
+  for (let i in date) {
+    cases[i] = cases[i].toLocaleString('en-US', {notation: 'compact', compactDisplay: 'short',})
+  }
+  */
+
   // output to console
   console.log(date);
   console.log(cases);
   console.log(deaths);
   console.log(recovered);
 
-  //console.log(cases[0].toLocaleString());
+  // example; delete later
+  console.log(
+    cases[5].toLocaleString("en-US", {
+      notation: "compact",
+      compactDisplay: "short",
+    })
+  );
 
   // grab DOM element and create chart
   let caseGraph = document.getElementById("casesLineGraph").getContext("2d");
@@ -64,7 +77,7 @@ function graph(data) {
           //position: "bottom",
         },
         title: {
-          text: "Total Cases",
+          text: "Cases",
           display: true,
         },
       },
@@ -79,6 +92,11 @@ function graph(data) {
           title: {
             display: true,
             text: "count",
+          },
+          ticks: {
+            callback: function (value, index, values) {
+              return value / 1e6 + "M";
+            },
           },
         },
       },
@@ -105,8 +123,27 @@ function graph(data) {
           display: false,
         },
         title: {
-          text: "Total Deaths",
+          text: "Deaths",
           display: true,
+        },
+      },
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: "date",
+          },
+        },
+        y: {
+          title: {
+            display: true,
+            text: "count",
+          },
+          ticks: {
+            callback: function (value, index, values) {
+              return value / 1e6 + "M";
+            },
+          },
         },
       },
     },
@@ -134,13 +171,33 @@ function graph(data) {
           display: false,
         },
         title: {
-          text: "Total Recovered",
+          text: "Recovered",
           display: true,
+        },
+      },
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: "date",
+          },
+        },
+        y: {
+          title: {
+            display: true,
+            text: "count",
+          },
+          ticks: {
+            callback: function (value, index, values) {
+              return value / 1e6 + "M";
+            },
+          },
         },
       },
     },
   });
 }
+
 
 /*
 function graphCases(data) {
