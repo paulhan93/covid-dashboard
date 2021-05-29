@@ -25,4 +25,16 @@ for i in range(len(oregon_covid)):
 oregon_data = pd.DataFrame(data, columns = ['date', 'county', 'state', 'cases'])
 oregon_data.to_json('only_for_oregon_counties.csv', index=False)
 oregon_data.head()
+# Get the Washington county data from only_for_oregon_counties.json file
 
+washington_county = pd.read_json('only_for_oregon.json')
+
+data = []
+
+for i in range(len(washington_county)):
+  if washington_county.iloc[i].county == 'Washington':
+    data.append(washington_county.iloc[i])
+
+new_washington_covid_data = pd.DataFrame(data, columns = ['date', 'county', 'state', 'cases'])
+new_washington_covid_data.to_json('only_for_washington_county.json', index=False)
+new_washington_covid_data.head()
