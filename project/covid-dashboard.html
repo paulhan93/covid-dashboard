@@ -148,7 +148,11 @@
     const configOptions = {
 			mapboxAccessToken: "pk.eyJ1IjoidGVzdHVzZXIxOTAiLCJhIjoiY2twNWd1bjMyMGx4YzJ3czEyZzZhMXZ5eCJ9.p-ZRhZtBuCp_G99borwdzA"
 		}
-        
+        async function getData() {
+			const loadData = await fetch("oregon.json");
+			return await loadData.json();
+		}
+
 </script>
 
 </html>
