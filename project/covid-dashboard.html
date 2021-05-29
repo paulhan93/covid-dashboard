@@ -149,7 +149,7 @@
 			mapboxAccessToken: "pk.eyJ1IjoidGVzdHVzZXIxOTAiLCJhIjoiY2twNWd1bjMyMGx4YzJ3czEyZzZhMXZ5eCJ9.p-ZRhZtBuCp_G99borwdzA"
 		}
         async function getData() {
-			const loadData = await fetch("oregon.json");
+			const loadData = await fetch("https://services.arcgis.com/uUvqNMGPm7axC2dD/arcgis/rest/services/COVID_Cases_Oregon_Public/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json");
 			return await loadData.json();
 		}
         getData().then((value) => {
