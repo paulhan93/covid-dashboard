@@ -152,7 +152,10 @@
 			const loadData = await fetch("oregon.json");
 			return await loadData.json();
 		}
-
+        getData().then((value) => {
+			const data = value.features.map((county) => {
+            })
+        }) 
 </script>
 
 </html>
