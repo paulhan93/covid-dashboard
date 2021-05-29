@@ -155,10 +155,20 @@
         getData().then((value) => {
 			const data = value.features.map((county) => {
                 return {
-				type: "choroplethmapbox",
-				locations: [county.attributes.instName], 
-				z: [county.attributes.Cases], 
-				coloraxis: "coloraxis",}
+                    type: "choroplethmapbox",
+                    locations: [county.attributes.instName], 
+                    z: [county.attributes.Cases], 
+                    coloraxis: "coloraxis",
+                    geojson: {
+                        type: "Feature", 
+                        id: county.attributes.instName, 
+                        geometry: {
+                            type: "Polygon", 
+                            coordinates: county.geometry.rings
+                        }	
+                    }
+                }
+                
             })
         }) 
 </script>
