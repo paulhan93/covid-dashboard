@@ -9,12 +9,12 @@ covid = pd.read_csv('https://raw.githubusercontent.com/nytimes/covid-19-data/mas
 covid.head()
 # Data Clean
 covid_clean = covid[['date','county','state','cases']]
-covid_clean.to_json('oregon.json', index=False)
-covid_clean_new = pd.read_json('oregon.json')
+covid_clean.to_csv('new_covid_counties_data.csv', index=False)
+covid_clean_new = pd.read_csv('new_covid_counties_data.csv')
 covid_clean_new.head()
-# Get the data of counties from oregon.json file
+# Get the data of counties from new_covid_counties_data.csv file
 
-oregon_covid = pd.read_json('oregon.json')
+oregon_covid = pd.read_csv('new_covid_counties_data.csv')
 
 data = []
 
@@ -22,12 +22,12 @@ for i in range(len(oregon_covid)):
   if oregon_covid.iloc[i].state == 'Oregon':
     data.append(oregon_covid.iloc[i])
 
-oregon_data = pd.DataFrame(data, columns = ['date', 'county', 'state', 'cases'])
-oregon_data.to_json('only_for_oregon_counties.csv', index=False)
-oregon_data.head()
-# Get the Washington county data from only_for_oregon_counties.json file
+new_oregon_covid_data = pd.DataFrame(data, columns = ['date', 'county', 'state', 'cases'])
+new_oregon_covid_data.to_csv('only_for_oregon_counties.csv', index=False)
+new_oregon_covid_data.head()
+# Get the Washington county data from only_for_oregon_counties.csv file
 
-washington_county = pd.read_json('only_for_oregon.json')
+washington_county = pd.read_csv('only_for_oregon_counties.csv')
 
 data = []
 
@@ -36,5 +36,5 @@ for i in range(len(washington_county)):
     data.append(washington_county.iloc[i])
 
 new_washington_covid_data = pd.DataFrame(data, columns = ['date', 'county', 'state', 'cases'])
-new_washington_covid_data.to_json('only_for_washington_county.json', index=False)
+new_washington_covid_data.to_csv('only_for_washington_county.csv', index=False)
 new_washington_covid_data.head()
