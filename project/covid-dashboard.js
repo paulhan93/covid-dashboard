@@ -18,7 +18,10 @@ async function getData(url) {
   graph(response);
 }
 
+
+
 function graph(data) {
+
   // contain date and number of cases
   let date = [];
   let cases = [];
@@ -48,11 +51,26 @@ function graph(data) {
 
   // example; delete later
   console.log(
-    cases[5].toLocaleString("en-US", {
+    cases[cases.length - 1].toLocaleString("en-US", {
       notation: "compact",
       compactDisplay: "short",
     })
   );
+
+  console.log(
+    deaths[deaths.length - 1].toLocaleString("en-US", {
+      notation: "compact",
+      compactDisplay: "short",
+    })
+  );
+
+  console.log(
+    recovered[recovered.length - 2].toLocaleString("en-US", {
+      notation: "compact",
+      compactDisplay: "short",
+    })
+  );
+
 
   // grab DOM element and create chart
   let caseGraph = document.getElementById("casesLineGraph").getContext("2d");
@@ -197,6 +215,9 @@ function graph(data) {
     },
   });
 }
+
+
+
 
 
 /*
