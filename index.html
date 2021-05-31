@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Covid Dashboard</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.0"></script>
     <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -16,9 +16,9 @@
 
 <body class="bg-info">
 
-    <!-- jumbotron / intro -->
-    <div class="jumbotron jumbotron-fluid bg-dark text-light text-uppercase">
-        <div class="container my-5">
+    <!-- header / intro -->
+    <div class="container-fluid py-5 bg-dark text-light text-uppercase text-center">
+        <div class="container my-3">
             <h1 class="text-center">covid-19 dashboard</h1>
         </div>
     </div>
@@ -32,6 +32,12 @@
             <canvas id="casesLineGraph"></canvas>
             <canvas id="deathsLineGraph"></canvas>
             <canvas id="recoveredLineGraph"></canvas>
+            <canvas id="cdPieChart"></canvas>
+
+            <div class="text-center">
+                <p> * The data above is fetched from a Covid-19 API, and it is updated daily.</p>
+                <p> * The recovered graph may be inaccurate due to the variant nature of the data.</p>
+            </div>
         </div>
 
         <!-- heatmap -->
@@ -125,13 +131,17 @@
 
     </main>
 
+    <!-- footer -->
     <footer class="footer py-4 bg-dark">
         <div class="container">
-            <p class="text-light">* Source: <a href="https://www.cdc.gov/">Centers for Disease Control and Prevention (CDC)</a></p>
+            <p class="text-light">* Source: <a href="https://www.cdc.gov/">Centers for Disease Control and Prevention
+                    (CDC)</a></p>
         </div>
     </footer>
 
 </body>
+
+<!-- script for heatmap -->
 <script>
     const layoutOptions = {
         //width: 'relative',

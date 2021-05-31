@@ -15,10 +15,7 @@ async function getData(url) {
   graph(response);
 }
 
-
-
 function graph(data) {
-
   // contain date and number of cases
   let date = [];
   let cases = [];
@@ -32,6 +29,7 @@ function graph(data) {
     deaths.push(data.deaths[i]);
     recovered.push(data.recovered[i]);
   }
+
 
   // output to console
   console.log(date);
@@ -55,12 +53,15 @@ function graph(data) {
   );
 
   console.log(
-    recovered[recovered.length - 2].toLocaleString("en-US", {
+    recovered[recovered.length - 1].toLocaleString("en-US", {
       notation: "compact",
       compactDisplay: "short",
     })
   );
 
+  let deathsToday = deaths[deaths.length - 1];
+  let recoveredToday = recovered[recovered.length - 1];
+  let restToday = cases[cases.length - 1] - deaths[deaths.length - 1] - recovered[recovered.length - 1];
 
   // grab DOM element and create chart
   let caseGraph = document.getElementById("casesLineGraph").getContext("2d");
@@ -82,7 +83,6 @@ function graph(data) {
       plugins: {
         legend: {
           display: false,
-          //position: "bottom",
         },
         title: {
           text: "Cases",
@@ -204,7 +204,33 @@ function graph(data) {
       },
     },
   });
+
+  // pie chart
+  let pieChart = document.getElementById("cdPieChart").getContext("2d");
+  new Chart(pieChart, {
+    type: "pie",
+    data: {
+      labels: ["Recovered", "Deaths","Unaccounted"],
+      datasets: [
+        {
+          data: [recoveredToday, deathsToday, restToday],
+          backgroundColor: ["#29BF00", "#AB271E","#49A9EA"],
+          hoverOffset: 4
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: true,
+          position: "bottom",
+        },
+        title: {
+          text: "Global Covid-19 Pie Chart",
+          display: true,
+        },
+      },
+    },
+  });
 }
-
-
-
