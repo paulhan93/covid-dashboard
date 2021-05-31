@@ -1,14 +1,14 @@
-# Covid-19 Dashboard
+# covid-19 dashboard
 This repo will be used to build a Covid-19 Dashboard. The dashboard will highlight key details about covid cases, as well as list potential symptoms, etc. which will provide at-a-glance view of key metrics related to Covid-19.
 
-# Stack
+# stack
 <ul>
   <li>HTML, CSS, JavaScript</li>
   <li>Bootstrap, jQuery</li>
   <li>Chart.js</li>
 </ul>
 
-# APIs
+# api
 We will use the following Covid APIs to gather pertinent information useful for our dashboard.
 <ul>
   <li>https://disease.sh/v3/covid-19/historical/all?lastdays=all</li>
@@ -18,3 +18,6 @@ We will use the following Covid APIs to gather pertinent information useful for 
   <li>https://github.com/community-insight-impact/covid_community_vulnerability</li>
   <li>https://github.com/public-apis/public-apis#health</li>
 </ul>
+
+# website
+https://paulhan93.github.io/covid-dashboard/
