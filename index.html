@@ -16,163 +16,171 @@
 
 <body class="bg-info">
 
+    <!-- jumbotron / intro -->
     <div class="jumbotron jumbotron-fluid bg-dark text-light text-uppercase">
         <div class="container my-5">
             <h1 class="text-center">covid-19 dashboard</h1>
         </div>
     </div>
 
+    <!-- main content -->
     <main class="container border rounded bg-light w-75 my-5">
 
-        <div class="container">
-            <div class="container my-5">
-                <h1 class="">Global Statistics</h1>
-                <canvas id="casesLineGraph"></canvas>
-                <canvas id="deathsLineGraph"></canvas>
-                <canvas id="recoveredLineGraph"></canvas>
-            </div>
-        </div>
-        <div class="container">
-            <div class="container my-5">
-                <div id='Heatmapplot'><!-- Plotly chart will be drawn inside this DIV --></div>
-            </div>
+        <!-- chart.js graphs & charts-->
+        <div class="container my-5">
+            <h1 class="">Global Statistics</h1>
+            <canvas id="casesLineGraph"></canvas>
+            <canvas id="deathsLineGraph"></canvas>
+            <canvas id="recoveredLineGraph"></canvas>
         </div>
 
-        <div class="container">
-            <div class="container my-5">
-                <h1>Symptoms of COVID-19</h1>
-                <p>People with COVID-19 have had a wide range of symptoms reported – ranging from mild symptoms to
-                    severe
-                    illness. Symptoms may appear 2-14 days after exposure to the virus. Anyone can have mild to
-                    severe
-                    symptoms.
-                    People with these symptoms may have COVID-19:</p>
-                <ul>
-                    <li>Fever or chills</li>
-                    <li>Cough</li>
-                    <li>Shortness of breath or difficulty breathing</li>
-                    <li>Fatigue</li>
-                    <li>Muscle or body aches</li>
-                    <li>Headache</li>
-                    <li>New loss of taste or smell</li>
-                    <li>Sore throat</li>
-                    <li>Congestion or runny nose</li>
-                    <li>Nausea or vomiting</li>
-                    <li>Diarrhea</li>
-                </ul>
-                <p>This list does not include all possible symptoms. CDC will continue to update this list as we
-                    learn
-                    more
-                    about COVID-19. Older adults and people who have severe underlying medical conditions like heart
-                    or
-                    lung
-                    disease or diabetes seem to be at higher risk for developing more serious complications from
-                    COVID-19
-                    illness.</p>
-            </div>
-
-            <div class="container my-5">
-                <h1>When to Seek Emergency Medical Attention</h1>
-                <p>Look for emergency warning signs for COVID-19. If someone is showing any of these signs,
-                    <strong>seek
-                        emergency medical care immediately:</strong>
-                </p>
-                <ul>
-                    <li>Trouble breathing</li>
-                    <li>Persistent pain or pressure in the test</li>
-                    <li>New confusion</li>
-                    <li>Inability to wake or stay awake</li>
-                    <li>Pale, grey, or blue-colored skin, lips, or nail beds, depending on skin tone</li>
-                </ul>
-                <p>This list is not all possible symptoms. Please call your medical provider for any other symptoms
-                    that
-                    are
-                    severe or concerning to you.</p>
-                <p>Call 911 or call ahead to your local emergency facility: Notify the operator that you are seeking
-                    care
-                    for
-                    someone who has or may have COVID-19.</p>
-            </div>
-
-            <div class="container my-5">
-                <h1>Difference between COVID-19 & Flu</h1>
-                <p>Influenza (Flu) and COVID-19 are both contagious respiratory illnesses, but they are caused by
-                    different
-                    viruses. COVID-19 is caused by infection with a new coronavirus (called SARS-CoV-2), and flu is
-                    caused
-                    by
-                    infection with influenza viruses.</p>
-                <p>COVID-19 seems to spread more easily than flu and causes more serious illnesses in some people.
-                    It
-                    can
-                    also
-                    take longer before people show symptoms and people can be contagious for longer. More
-                    information
-                    about
-                    differences between flu and COVID-19 is available in the different sections below.</p>
-                <p>Because some of the symptoms of flu and COVID-19 are similar, it may be hard to tell the
-                    difference
-                    between
-                    them based on symptoms alone, and testing may be needed to help confirm a diagnosis.</p>
-                <p>While more is learned every day about COVID-19 and the virus that causes it, there is still a lot
-                    that is
-                    unknown . This page compares COVID-19 and flu, given the best available information to date.</p>
+        <!-- heatmap -->
+        <div class="container my-5">
+            <h1 class="">Heatmap of Oregon</h1>
+            <div id='Heatmapplot' class="center">
+                <!-- Plotly chart will be drawn inside this DIV -->
             </div>
         </div>
 
-        <div id="information" class="container"></div>
+        <!-- covid info -->
+        <div class="container my-5">
+            <h1>Symptoms of COVID-19</h1>
+            <p>People with COVID-19 have had a wide range of symptoms reported – ranging from mild symptoms to
+                severe
+                illness. Symptoms may appear 2-14 days after exposure to the virus. Anyone can have mild to
+                severe
+                symptoms.
+                People with these symptoms may have COVID-19:</p>
+            <ul>
+                <li>Fever or chills</li>
+                <li>Cough</li>
+                <li>Shortness of breath or difficulty breathing</li>
+                <li>Fatigue</li>
+                <li>Muscle or body aches</li>
+                <li>Headache</li>
+                <li>New loss of taste or smell</li>
+                <li>Sore throat</li>
+                <li>Congestion or runny nose</li>
+                <li>Nausea or vomiting</li>
+                <li>Diarrhea</li>
+            </ul>
+            <p>This list does not include all possible symptoms. CDC will continue to update this list as we
+                learn
+                more
+                about COVID-19. Older adults and people who have severe underlying medical conditions like heart
+                or
+                lung
+                disease or diabetes seem to be at higher risk for developing more serious complications from
+                COVID-19
+                illness.</p>
+        </div>
+
+        <div class="container my-5">
+            <h1>When to Seek Emergency Medical Attention</h1>
+            <p>Look for emergency warning signs for COVID-19. If someone is showing any of these signs,
+                <strong>seek
+                    emergency medical care immediately:</strong>
+            </p>
+            <ul>
+                <li>Trouble breathing</li>
+                <li>Persistent pain or pressure in the test</li>
+                <li>New confusion</li>
+                <li>Inability to wake or stay awake</li>
+                <li>Pale, grey, or blue-colored skin, lips, or nail beds, depending on skin tone</li>
+            </ul>
+            <p>This list is not all possible symptoms. Please call your medical provider for any other symptoms
+                that
+                are
+                severe or concerning to you.</p>
+            <p>Call 911 or call ahead to your local emergency facility: Notify the operator that you are seeking
+                care
+                for
+                someone who has or may have COVID-19.</p>
+        </div>
+
+        <div class="container my-5">
+            <h1>Difference between COVID-19 & Flu</h1>
+            <p>Influenza (Flu) and COVID-19 are both contagious respiratory illnesses, but they are caused by
+                different
+                viruses. COVID-19 is caused by infection with a new coronavirus (called SARS-CoV-2), and flu is
+                caused
+                by
+                infection with influenza viruses.</p>
+            <p>COVID-19 seems to spread more easily than flu and causes more serious illnesses in some people.
+                It
+                can
+                also
+                take longer before people show symptoms and people can be contagious for longer. More
+                information
+                about
+                differences between flu and COVID-19 is available in the different sections below.</p>
+            <p>Because some of the symptoms of flu and COVID-19 are similar, it may be hard to tell the
+                difference
+                between
+                them based on symptoms alone, and testing may be needed to help confirm a diagnosis.</p>
+            <p>While more is learned every day about COVID-19 and the virus that causes it, there is still a lot
+                that is
+                unknown . This page compares COVID-19 and flu, given the best available information to date.</p>
+        </div>
 
     </main>
+
+    <footer class="footer py-4 bg-dark">
+        <div class="container">
+            <p class="text-light">* Source: <a href="https://www.cdc.gov/">Centers for Disease Control and Prevention (CDC)</a></p>
+        </div>
+    </footer>
+
 </body>
 <script>
     const layoutOptions = {
-			//width: 1024, 
-			height: 550, 
-            mapbox: {
-				style: 'streets',
-				center: {
-					lon: -120.500000, lat: 44.000000
-				}, 
-				zoom: 5
-			}, 
-            marker: {
-				line: {
-					color: "blue"
-				}
-			},
-            coloraxis: {
-				showscale: false,
-				colorscale: "Viridis"
-			}
+        //width: 'relative',
+        height: '550',
+        mapbox: {
+            style: 'streets',
+            center: {
+                lon: -120.500000, lat: 44.000000
+            },
+            zoom: 5
+        },
+        marker: {
+            line: {
+                color: "blue"
+            }
+        },
+        coloraxis: {
+            showscale: false,
+            colorscale: "Viridis"
+        }
     }
     const configOptions = {
-			mapboxAccessToken: "pk.eyJ1IjoidGVzdHVzZXIxOTAiLCJhIjoiY2twNWd1bjMyMGx4YzJ3czEyZzZhMXZ5eCJ9.p-ZRhZtBuCp_G99borwdzA"
-		}
-        async function getData() {
-			const loadData = await fetch("https://services.arcgis.com/uUvqNMGPm7axC2dD/arcgis/rest/services/COVID_Cases_Oregon_Public/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json");
-			return await loadData.json();
-		}
-        getData().then((value) => {
-			const data = value.features.map((county) => {
-                return {
-                    type: "choroplethmapbox",
-                    locations: [county.attributes.instName], 
-                    z: [county.attributes.Cases], 
-                    coloraxis: "coloraxis",
-                    geojson: {
-                        type: "Feature", 
-                        id: county.attributes.instName, 
-                        geometry: {
-                            type: "Polygon", 
-                            coordinates: county.geometry.rings
-                        }	
+        mapboxAccessToken: "pk.eyJ1IjoidGVzdHVzZXIxOTAiLCJhIjoiY2twNWd1bjMyMGx4YzJ3czEyZzZhMXZ5eCJ9.p-ZRhZtBuCp_G99borwdzA"
+    }
+    async function getData() {
+        const loadData = await fetch("https://services.arcgis.com/uUvqNMGPm7axC2dD/arcgis/rest/services/COVID_Cases_Oregon_Public/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json");
+        return await loadData.json();
+    }
+    getData().then((value) => {
+        const data = value.features.map((county) => {
+            return {
+                type: "choroplethmapbox",
+                locations: [county.attributes.instName],
+                z: [county.attributes.Cases],
+                coloraxis: "coloraxis",
+                geojson: {
+                    type: "Feature",
+                    id: county.attributes.instName,
+                    geometry: {
+                        type: "Polygon",
+                        coordinates: county.geometry.rings
                     }
                 }
-                
-            });
-            Plotly.newPlot('Heatmapplot', data, layoutOptions, configOptions);
+            }
 
-        }) 
+        });
+        Plotly.newPlot('Heatmapplot', data, layoutOptions, configOptions);
+
+    })
 </script>
 
 </html>
