@@ -73,7 +73,7 @@ function graphs(data) {
       labels: date,
       datasets: [
         {
-          label: "Total Cases",
+          label: "Cases",
           data: cases,
           backgroundColor: ["#49A9EA"],
           borderColor: ["#2D85CF"],
@@ -94,7 +94,6 @@ function graphs(data) {
     },
     options: {
       responsive: true,
-      maintaiAspectRatio: false,
       plugins: {
         legend: {
           display: true,
@@ -133,10 +132,12 @@ function charts(globalData, usaData) {
   let globalCases = globalData.cases;
   let globalDeaths = globalData.deaths;
   let globalRecovered = globalData.recovered;
+  let globalTotal = globalCases + globalDeaths + globalRecovered;
 
   let usaCases = usaData.cases;
   let usaDeaths = usaData.deaths;
   let usaRecovered = usaData.recovered;
+  let usaTotal = usaCases + usaDeaths + usaRecovered;
 
   console.log(globalCases);
   console.log(usaCases);
@@ -187,6 +188,7 @@ function charts(globalData, usaData) {
     },
     options: {
       responsive: true,
+      maintainAspectRatio: true,
       plugins: {
         legend: {
           display: true,
@@ -201,181 +203,3 @@ function charts(globalData, usaData) {
   });
 }
 
-/*
-  // graphs
-  let caseGraph = document.getElementById("casesLineGraph").getContext("2d");
-  new Chart(caseGraph, {
-    type: "line",
-    data: {
-      labels: date,
-      datasets: [
-        {
-          //label: "Total Cases",
-          data: cases,
-          backgroundColor: ["#49A9EA"],
-          fill: true,
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          display: false,
-        },
-        title: {
-          text: "Cases",
-          display: true,
-        },
-      },
-      scales: {
-        x: {
-          title: {
-            display: true,
-            text: "date",
-          },
-        },
-        y: {
-          title: {
-            display: true,
-            text: "count",
-          },
-          ticks: {
-            callback: function (value, index, values) {
-              return value / 1e6 + "M";
-            },
-          },
-        },
-      },
-    },
-  });
-
-  let deathGraph = document.getElementById("deathsLineGraph").getContext("2d");
-  new Chart(deathGraph, {
-    type: "line",
-    data: {
-      labels: date,
-      datasets: [
-        {
-          data: deaths,
-          backgroundColor: ["#AB271E"],
-          fill: true,
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          display: false,
-        },
-        title: {
-          text: "Deaths",
-          display: true,
-        },
-      },
-      scales: {
-        x: {
-          title: {
-            display: true,
-            text: "date",
-          },
-        },
-        y: {
-          title: {
-            display: true,
-            text: "count",
-          },
-          ticks: {
-            callback: function (value, index, values) {
-              return value / 1e6 + "M";
-            },
-          },
-        },
-      },
-    },
-  });
-
-  let recoveredGraph = document
-    .getElementById("recoveredLineGraph")
-    .getContext("2d");
-  new Chart(recoveredGraph, {
-    type: "line",
-    data: {
-      labels: date,
-      datasets: [
-        {
-          data: recovered,
-          backgroundColor: ["#29BF00"],
-          fill: true,
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          display: false,
-        },
-        title: {
-          text: "Recovered",
-          display: true,
-        },
-      },
-      scales: {
-        x: {
-          title: {
-            display: true,
-            text: "date",
-          },
-        },
-        y: {
-          title: {
-            display: true,
-            text: "count",
-          },
-          ticks: {
-            callback: function (value, index, values) {
-              return value / 1e6 + "M";
-            },
-          },
-        },
-      },
-    },
-  });
-
-  // data for pie chart
-  let deathsToday = deaths[deaths.length - 1];
-  let recoveredToday = recovered[recovered.length - 1];
-  let restToday = cases[cases.length - 1] - deaths[deaths.length - 1] - recovered[recovered.length - 1];
-
-  // pie chart
-  let pieChart = document.getElementById("cdPieChart").getContext("2d");
-  new Chart(pieChart, {
-    type: "pie",
-    data: {
-      labels: ["Recovered", "Deaths","Unaccounted"],
-      datasets: [
-        {
-          data: [recoveredToday, deathsToday, restToday],
-          backgroundColor: ["#29BF00", "#AB271E","#49A9EA"],
-          hoverOffset: 4
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          display: true,
-          position: "bottom",
-        },
-        title: {
-          text: "Global Covid-19 Pie Chart",
-          display: true,
-        },
-      },
-    },
-  });
-}
-*/

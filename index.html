@@ -9,6 +9,7 @@
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
     <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="covid-dashboard.js"></script>
     <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
@@ -29,21 +30,21 @@
         <!-- chart.js graphs & charts-->
         <div class="container my-5">
             <h1 class="">Graphs & Charts</h1>
-            <canvas id="allGraphs"></canvas>
-            <!--
-            <canvas id="casesLineGraph"></canvas>
-            <canvas id="deathsLineGraph"></canvas>
-            <canvas id="recoveredLineGraph"></canvas>
-            -->
+            <div class="row">
+                <div class="col">
+                    <canvas id="allGraphs" height="200"></canvas>
+                </div>
+            </div>
+            <br><br>
             <div class='row'>
-                <div class='col-6'>
+                <div class='col'>
                     <canvas id="globalPie"></canvas>
                 </div>
-                <div class='col-6'>
+                <div class='col'>
                     <canvas id="usaPie"></canvas>
                 </div>
             </div>
-
+            <br>
             <div class="text-center">
                 <p> * The data above is from <a href="https://disease.sh/">Open Disease Data API</a>, and it is updated
                     daily.</p>
