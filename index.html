@@ -28,15 +28,25 @@
 
         <!-- chart.js graphs & charts-->
         <div class="container my-5">
-            <h1 class="">Global Statistics</h1>
+            <h1 class="">Graphs & Charts</h1>
+            <canvas id="allGraphs"></canvas>
+            <!--
             <canvas id="casesLineGraph"></canvas>
             <canvas id="deathsLineGraph"></canvas>
             <canvas id="recoveredLineGraph"></canvas>
-            <canvas id="cdPieChart"></canvas>
+            -->
+            <div class='row'>
+                <div class='col-6'>
+                    <canvas id="globalPie"></canvas>
+                </div>
+                <div class='col-6'>
+                    <canvas id="usaPie"></canvas>
+                </div>
+            </div>
 
             <div class="text-center">
-                <p> * The data above is fetched from a Covid-19 API, and it is updated daily.</p>
-                <p> * The recovered graph may be inaccurate due to the variant nature of the data.</p>
+                <p> * The data above is from <a href="https://disease.sh/">Open Disease Data API</a>, and it is updated
+                    daily.</p>
             </div>
         </div>
 
