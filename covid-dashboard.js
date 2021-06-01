@@ -3,6 +3,7 @@ const url1 = "https://disease.sh/v3/covid-19/historical/all?lastdays=all"; // ne
 const url2 = "https://disease.sh/v3/covid-19/all";
 const url3 = "https://disease.sh/v3/covid-19/countries/usa";
 
+// deploy charts & graphs in DOM
 getData();
 
 // fetch url & convert to json data format
@@ -132,12 +133,10 @@ function charts(globalData, usaData) {
   let globalCases = globalData.cases;
   let globalDeaths = globalData.deaths;
   let globalRecovered = globalData.recovered;
-  let globalTotal = globalCases + globalDeaths + globalRecovered;
 
   let usaCases = usaData.cases;
   let usaDeaths = usaData.deaths;
   let usaRecovered = usaData.recovered;
-  let usaTotal = usaCases + usaDeaths + usaRecovered;
 
   console.log(globalCases);
   console.log(usaCases);
