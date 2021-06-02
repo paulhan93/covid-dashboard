@@ -129,7 +129,6 @@ function graphs(data) {
 }
 
 function charts(globalData, usaData) {
-
   let globalCases = globalData.cases;
   let globalDeaths = globalData.deaths;
   let globalRecovered = globalData.recovered;
@@ -140,7 +139,6 @@ function charts(globalData, usaData) {
 
   console.log(globalCases);
   console.log(usaCases);
-
 
   let globalPie = document.getElementById("globalPie").getContext("2d");
   new Chart(globalPie, {
@@ -201,4 +199,3 @@ function charts(globalData, usaData) {
     },
   });
 }
-
