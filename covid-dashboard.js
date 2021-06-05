@@ -224,7 +224,22 @@ function vacc_data(data) {
     v_data.push(index);
   }
 
-  //console.log(v_data);
+  // show total count of vacc
+  let total = 0;
+  for (let i in v_data) {
+    total += v_data[i][1];
+  }
+
+  total = total.toLocaleString("en-US", {notation: "compact", compactDisplay: "short"});
+  console.log(total);
+
+  const vaccCount = document.createElement("h5");
+  vaccCount.textContent = total;
+  console.log(vaccCount);
+
+  const vaccSection = document.getElementById("total-vacc");
+  vaccSection.append(total);
+
 
   // sort highest-to-lowest
   v_data.sort(function (a, b) {
@@ -233,6 +248,27 @@ function vacc_data(data) {
 
   console.log(v_data);
 
+
+  // find left-over for pie chart
+  let totalall = 0;
+  let total10 = 0;
+
+  for (let i in v_data) {
+    totalall += v_data[i][1];
+  }
+
+  for (let i = 0; i < 10; ++i) {
+    total10 += v_data[i][1];
+  }
+
+  console.log(totalall);
+  console.log(total10);
+  console.log(totalall-total10);
+
+  let other = totalall-total10;
+  
+
+  // build vaccine pie chart
   let vaccPie = document.getElementById("vaccPie").getContext("2d");
   new Chart(vaccPie, {
     type: "pie",
@@ -248,6 +284,7 @@ function vacc_data(data) {
         v_data[7][0],
         v_data[8][0],
         v_data[9][0],
+        "other",
       ],
       datasets: [
         {
@@ -262,6 +299,7 @@ function vacc_data(data) {
             v_data[7][1],
             v_data[8][1],
             v_data[9][1],
+            other,
           ],
           backgroundColor: [
             "#e6194B",
@@ -274,6 +312,7 @@ function vacc_data(data) {
             "#f032e6",
             "#000075",
             "#f58231",
+            "#808080",
           ],
           hoverOffset: 4,
         },

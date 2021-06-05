@@ -18,7 +18,8 @@
 <body class="bg-success">
 
     <!-- header -->
-    <header class="hero py-5" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(covid-virus.webp); background-size: cover; z-index: 10;">
+    <header class="hero py-5"
+        style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(covid-virus.webp); background-size: cover; z-index: 10;">
         <div class="hero-body text-light text-uppercase text-center">
             <h1>covid-19 dashboard</h1>
             <h5>frontend web development</h5>
@@ -28,7 +29,7 @@
             <p>This dashboard provides up-to-date information about Covid-19.</p>
         </div>
     </header>
-    
+
 
     <!-- main content -->
     <main class="container border rounded bg-light w-75 my-5">
@@ -60,7 +61,18 @@
         <!-- vaccination data -->
         <div class="container my-5">
             <h1 class="text-muted">Vaccination Data</h1>
-            <canvas id="vaccPie"></canvas>
+            <h5 id="total-vacc">Global Count : </h5>
+            
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8">
+                    <canvas id="vaccPie"></canvas>
+                </div>
+                <div class="col-2"></div>
+            </div>
+            <div class="text-center">
+                <p> * The data above reflects the number of doses given, not fully vaccinated.</p>
+            </div>
         </div>
 
         <!-- heatmap -->
