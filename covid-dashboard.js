@@ -2,6 +2,8 @@
 const url1 = "https://disease.sh/v3/covid-19/historical/all?lastdays=all"; // new cases, deaths, recoveries
 const url2 = "https://disease.sh/v3/covid-19/all";
 const url3 = "https://disease.sh/v3/covid-19/countries/usa";
+const url4 =
+  "https://disease.sh/v3/covid-19/vaccine/coverage/countries?lastdays=1";
 
 // deploy charts & graphs in DOM
 getData();
@@ -11,17 +13,25 @@ async function getData() {
   const rawData1 = await fetch(url1);
   const rawData2 = await fetch(url2);
   const rawData3 = await fetch(url3);
+  const rawData4 = await fetch(url4);
 
-  if (rawData1 == undefined || rawData2 == undefined || rawData3 == undefined) {
+  if (
+    rawData1 == undefined ||
+    rawData2 == undefined ||
+    rawData3 == undefined ||
+    rawData4 == undefined
+  ) {
     console.log("Error.");
   }
 
   let response1 = await rawData1.json();
   let response2 = await rawData2.json();
   let response3 = await rawData3.json();
+  let response4 = await rawData4.json();
 
   graphs(response1);
   charts(response2, response3);
+  vacc_data(response4);
 }
 
 function graphs(data) {
@@ -193,6 +203,92 @@ function charts(globalData, usaData) {
         },
         title: {
           text: "USA Covid-19 Pie Chart",
+          display: true,
+        },
+      },
+    },
+  });
+}
+
+// vaccination data
+function vacc_data(data) {
+  // array of countries & vacc_count
+  let v_data = [];
+
+  // create array of pairs (country, vaccination_count)
+  for (let i in Object(data)) {
+    let country = data[i].country;
+    let count = Object.values(data[i].timeline)[0];
+
+    index = [country, count];
+    v_data.push(index);
+  }
+
+  //console.log(v_data);
+
+  // sort highest-to-lowest
+  v_data.sort(function (a, b) {
+    return b[1] - a[1];
+  });
+
+  console.log(v_data);
+
+  let vaccPie = document.getElementById("vaccPie").getContext("2d");
+  new Chart(vaccPie, {
+    type: "pie",
+    data: {
+      labels: [
+        v_data[0][0],
+        v_data[1][0],
+        v_data[2][0],
+        v_data[3][0],
+        v_data[4][0],
+        v_data[5][0],
+        v_data[6][0],
+        v_data[7][0],
+        v_data[8][0],
+        v_data[9][0],
+      ],
+      datasets: [
+        {
+          data: [
+            v_data[0][1],
+            v_data[1][1],
+            v_data[2][1],
+            v_data[3][1],
+            v_data[4][1],
+            v_data[5][1],
+            v_data[6][1],
+            v_data[7][1],
+            v_data[8][1],
+            v_data[9][1],
+          ],
+          backgroundColor: [
+            "#e6194B",
+            "#4363d8",
+            "#ffe119",
+            "#3cb44b",
+            "#42d4f4",
+            "#911eb4",
+            "#bfef45",
+            "#f032e6",
+            "#000075",
+            "#f58231",
+          ],
+          hoverOffset: 4,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: {
+        legend: {
+          display: true,
+          position: "bottom",
+        },
+        title: {
+          text: "Top 10 Most Vaccinated by Volume",
           display: true,
         },
       },

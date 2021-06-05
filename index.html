@@ -15,15 +15,17 @@
     <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
 </head>
 
-<body class="bg-info">
+<body class="bg-success">
 
     <!-- header -->
     <header class="hero py-5" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(covid-virus.webp); background-size: cover; z-index: 10;">
         <div class="hero-body text-light text-uppercase text-center">
             <h1>covid-19 dashboard</h1>
             <h5>frontend web development</h5>
-            <h5>ki tae (paul) han</h5> 
-            <h5>sara alotaibi</h5>
+            <br>
+        </div>
+        <div class="hero-body text-light text-center">
+            <p>This dashboard provides up-to-date information about Covid-19.</p>
         </div>
     </header>
     
@@ -33,7 +35,7 @@
 
         <!-- chart.js graphs & charts-->
         <div class="container my-5">
-            <h1 class="">Graphs & Charts</h1>
+            <h1 class="text-muted">Graphs & Charts</h1>
             <div class="row">
                 <div class="col">
                     <canvas id="allGraphs" height="200"></canvas>
@@ -55,9 +57,15 @@
             </div>
         </div>
 
+        <!-- vaccination data -->
+        <div class="container my-5">
+            <h1 class="text-muted">Vaccination Data</h1>
+            <canvas id="vaccPie"></canvas>
+        </div>
+
         <!-- heatmap -->
         <div class="container my-5">
-            <h1 class="">Heatmap of Oregon</h1>
+            <h1 class="text-muted">Heatmap of Oregon</h1>
             <div id='Heatmapplot' class="center">
                 <!-- Plotly chart will be drawn inside this DIV -->
             </div>
@@ -65,7 +73,7 @@
 
         <!-- covid info -->
         <div class="container my-5">
-            <h1>Symptoms of COVID-19</h1>
+            <h1 class="text-muted">Symptoms of COVID-19</h1>
             <p>People with COVID-19 have had a wide range of symptoms reported – ranging from mild symptoms to
                 severe
                 illness. Symptoms may appear 2-14 days after exposure to the virus. Anyone can have mild to
@@ -97,7 +105,7 @@
         </div>
 
         <div class="container my-5">
-            <h1>When to Seek Emergency Medical Attention</h1>
+            <h1 class="text-muted">When to Seek Emergency Medical Attention</h1>
             <p>Look for emergency warning signs for COVID-19. If someone is showing any of these signs,
                 <strong>seek
                     emergency medical care immediately:</strong>
@@ -120,7 +128,7 @@
         </div>
 
         <div class="container my-5">
-            <h1>Difference between COVID-19 & Flu</h1>
+            <h1 class="text-muted">Difference between COVID-19 & Flu</h1>
             <p>Influenza (Flu) and COVID-19 are both contagious respiratory illnesses, but they are caused by
                 different
                 viruses. COVID-19 is caused by infection with a new coronavirus (called SARS-CoV-2), and flu is

@@ -1,2 +1,9 @@
-.container-fluid:hover {
+.hero-body:hover {
+    color: orange !important;
 }
+
+
+.container > h1:hover {
+    color: black !important;
+}
+
